@@ -1,0 +1,123 @@
+<!-- #include file="pop.htm" -->  
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<html xmlns:v="urn:schemas-microsoft-com:vml">
+<title>Div拖动/调整大小实例</title>
+<style>
+v\:*   {  Behavior:   url(#default#VML)} 
+</style>
+
+
+
+
+<script language="javascript" src="api_v1.js"></script>
+<script language="javascript" src="mapTool.js"></script>
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<ul id="contextMenu">
+    <li><a onClick="javascript:menuMove();">移动</a></li>
+	<li><a onClick="javascript:menuZoominNext();">放大</a></li>
+	<li><a onClick="javascript:menuZoomoutPre();">缩小</a></li>
+	
+</ul> 
+
+<body>
+	<input type="button" value="移动" onClick="setMove();"/>
+	<input type="button" value="测距" onClick="mesDistance();"/>
+	<input type="button" value="测面" onClick="mesArea();"/>
+	<input type="button" value="图片标记" onClick="addMarker();"/>
+	<input type="button" value="改变颜色" onClick="changeMarkerColor();"/>
+	<input type="button" value="标记周边1000米" onClick="addCircle(12000);"/>
+	<input type="button" value="文字标记" onClick="annoWord();"/>
+	<input type="button" value="文本标注" onClick="annoText();"/>
+	<input type="button" value="可移动图标" onClick="addMoveIcon();"/>
+	<input type="button" value="多标记居中" onClick="multiAnnoCenter();"/>
+	<input type="button" value="图上取点" onClick="addPoiFromMap();"/>	
+	<input type="button" value="矢量线" onClick="addLine();"/>
+	<input type="button" value="矢量面" onClick="addPolygon();"/>
+	<input type="button" value="画线" onClick="drawLine();"/>
+	<input type="button" value="画面" onClick="drawPolygon();"/>
+	<input type="button" value="画矩形" onClick="drawRange();"/>
+	<input type="button" value="矢量地图" onClick="vectorMap();"/>
+	<input type="button" value="影像地图" onClick="satelliteImages();"/>
+	<input type="button" value="删除" onClick="del();"/>
+	<input type="button" value="群(450917217)" onClick=""/>
+<div id="infoBox">
+   <div class="title" title="">
+      <p title="测试点">测试点
+      <a href="#">[详情↗]</a>
+      </p>
+   </div>
+   <div style="cursor:pointer;">
+   <img src="conf/jiucuo.gif" style="position:absolute;top:10px;right:40px;width:14px;height:11px;-moz-user-select:none;cursor:pointer;z-index:10000;">
+   <img src="conf/close.gif"  style="position:absolute;top:5px;right:8px;width:25px;height:21px;-moz-user-select:none;cursor:pointer;z-index:10000;">
+   </div>
+   <div class="mapInfo">
+      <div class="baseInfo">
+          <div title="测试点" style="float:right;width:88px;height:70px;display:inline;text-align:center">
+             <a href="#"><img width="88" height="70" border="0"  src="conf/poi-pics.jpg" alt="北京大学" style="border:#bdbdbd solid 1px;">
+             </a>
+          </div>
+          
+          <div class="detail" >
+             <table class="table_addr_tel" border="0" cellspacing="0" cellpadding="0">
+                <tbody>
+                  <tr>
+                    <th>地址：</th>
+                    <td> </td>
+                  </tr>
+                  <tr >
+                    <th>电话：</th>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>入驻</th>
+                    <td></td>
+                  </tr>
+                  <tr >
+                    <th>单位：</th>
+                    <td></td>
+                  </tr>
+                  <tr >
+                    <th><a href="#">[更多]</a></th>
+                    <td><a href="#">[申请入驻]</a></td>
+                  </tr>
+                </tbody>
+             </table>
+          </div>
+
+      </div> 
+   </div>
+   <div class="zhoubian">
+           <p>周边查询</p>
+           
+           <form>
+                <select name="roundM" >
+                <option value="1" selected="selected" title="100米">100米</option> 
+                <option value="2" title="500米">500米</option> 
+                <option value="3" title="1000米">1000米</option> 
+                </select>
+                <input id="#" type="text" autocomplete="on" maxlength="80" size="10">
+                <input type="button"  value="搜 索">
+           </form>
+   </div>
+   <div class="round_list">
+      <a class="first" onClick="" tid="" href="">政府</a>
+      <a onClick="" href=""> 宾馆</a>
+      <a onClick="" href="">餐馆</a>
+      <a onClick="" href=""> 银行</a>
+      <a onClick="" href="">公交站</a>
+      <a onClick="" href="">更多>></a>
+   </div>
+</div>
+
+<div id="map"> </div>  
+ <script type="text/javascript"> 
+	 initMap();		
+	  			
+ </script>
+</body>
+</html>
+
+
